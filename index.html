@@ -5,62 +5,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2023년 버킷리스트</title>
-    <style> 
-      @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700&display=swap');
-      * {
-        font-family: 'Hahmlet', serif;
-      }
-        .title {
+    <title>코딩네컷</title>
+    <style>
+        /* 이서윤체 폰트 적용을 위한 코드 */
+        @font-face {
+            font-family: "LeeSeoyun";
+            src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* body태그 자체에 css 요소 부여 */
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-image: url(/background.png);
+        }
+
+        .container {
+            width: 390px;
+            background-color: #ff9d73;
+            height: 100%;
+        }
+
+        .photos {
+            margin-top: 30px;
+        }
+
+        .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 200px;
+            background-size: cover;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .f-title {
+            font-size: 25px;
+            font-weight: 900;
             color: white;
-            background-color: tomato;
-            font-size: 24px;
-            padding: 4px;
-            14px;
-            border-radius: 8px;
         }
 
-        .bg {
-            width: 360px;
-            background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/bg-grid.png");
+        .f-date {
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
         }
 
-        .msg {
-            font-weight: bold;
+        #image1 {
+            background-image: url("./img1.png");
         }
 
-        .bucket {
-            width: 160px;
-            height: 160px;
+        #image2 {
+            background-image: url("./img2.png");
         }
 
-        .img1 {
-            background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/bucket-red.png");
-            background-size: cover;
-            background-position: center;
+        #image3 {
+            background-image: url("./img3.png");
         }
 
-        .img2 {
-            background-image: url("https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/bucket-lightred.png");
-            background-size: cover;
-            background-position: center;
+        #image4 {
+            background-image: url("./img4.png");
+        }
+
+        .photo-description {
+            color: white;
+            background-color: black;
+
+            width: fit-content;
+            padding: 0 20px;
+            margin-bottom: 10px;
+
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+
+            transform: translate(-50%);
+            left: 50%;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/bucketList/sparta-bucket2.css">
 </head>
 
-<body class="bg-t3 center">
-    <h1 class="title-t4">2023 신년계획</h1>
-    <p class="msg">올해는 꼭 지키자!</p>
-    <div class="row flex-row wrap">
-        <div class="bucket img1-t4 center">몸무게 10kg 감량</div>
-        <div class="bucket img2-t2 center">집 청소 꾸준히 하기</div>
-        <div class="bucket img1 center">건강한 음식 먹기</div>
-        <div class="bucket img2 center">영어 공부 하기</div>
-        <div class="bucket img1 center">SQLD 합격하기</div>
-        <div class="bucket img2 center">취직하기</div>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="image1" class="photo-frame" onmouseover="hideText(1)" onmouseout="showText(1)"
+                onclick="alertText(1)">
+                <span id="desc1" class="photo-description">
+                    차렷!
+                </span>
+            </div>
+            <div id="image2" class="photo-frame" onmouseover="hideText(2)"
+                onmouseout="showText(2)" onclick="alertText(2)">
+                <span id="desc2" class="photo-description">
+                    양손 올려
+                </span>
+            </div>
+            <div id="image3" class="photo-frame" onmouseover="hideText(3)"
+            onmouseout="showText(3)"
+            onclick="alertText(3)">
+                <span id="desc3" class="photo-description">
+                    오른손 올려
+                </span>
+            </div>
+            <div class="photo-frame">
+                <iframe src="https://www.youtube.com/embed/agYZbSt-3LY" 
+                frameborder="0"
+                class="video"></iframe>
+            
+            </div>
+        </div>
+        <div class="footer">
+            <p class="f-title">happy lunch time</p>
+            <p class="f-title">2023.01.23</p>
+        </div>
     </div>
-
 </body>
 
 </html>
